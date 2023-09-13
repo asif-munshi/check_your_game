@@ -33,3 +33,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Authors
 
 - [@Asif Munshi](https://www.github.com/asif-munshi)
+
+## Notes
+
+```bash
+  dotenv -e .env.local npx prisma db push
+```
