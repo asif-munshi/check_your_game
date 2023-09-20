@@ -13,7 +13,7 @@ export default function Home() {
   if (isLoading || !data) return <main>Loading...</main>;
 
   return (
-    <main className="flex min-h-screen flex-col items-center gap-4 p-24">
+    <main className="flex h-screen flex-col items-center gap-4 p-24">
       <h2 className="text-xl font-bold">Hello World!</h2>
       {data.map((todo) => {
         const createDate = new Date(todo.createdAt);
