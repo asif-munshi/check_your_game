@@ -93,7 +93,7 @@ export default function Footer() {
           <div className="text-white">
             <Link
               href={"/"}
-              className="transition-colors duration-300 ease-in-out hover:text-[#007aff]"
+              className="text-lg font-semibold transition-colors duration-300 ease-in-out hover:text-[#007aff]"
             >
               CYG
             </Link>
