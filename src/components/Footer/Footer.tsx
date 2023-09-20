@@ -1,5 +1,47 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
 import ScrollToTop from "./ScrollToTop";
+
+const socials = [
+  {
+    id: 1,
+    link: "https://www.facebook.com/",
+    icon: "/social/facebook-icon.png",
+    alt: "Facebook Icon",
+    width: 28,
+    height: 28,
+    sr: "Facebook",
+  },
+  {
+    id: 2,
+    link: "https://www.twitter.com/",
+    icon: "/social/twitter-icon.png",
+    alt: "Twitter Icon",
+    width: 24,
+    height: 24,
+    sr: "Twitter",
+  },
+  {
+    id: 3,
+    link: "https://www.reddit.com/",
+    icon: "/social/reddit-icon.svg",
+    alt: "Reddit Icon",
+    width: 28,
+    height: 28,
+    sr: "Reddit",
+  },
+  {
+    id: 4,
+    link: "https://www.github.com/",
+    icon: "/social/github-mark-white.svg",
+    alt: "Github Icon",
+    width: 28,
+    height: 28,
+    sr: "Github",
+  },
+];
 
 export default function Footer() {
   const currentYear = new Date();
@@ -9,22 +51,19 @@ export default function Footer() {
         <div className="flex justify-between">
           <div className="px-[15px]">
             <div className="mt-[1em] flex flex-row gap-4 text-white">
-              <Link
-                target="_blank"
-                href={"https://www.facebook.com/"}
-                className="transition-colors duration-300 ease-in-out hover:text-[#007aff]"
-              >
-                IFacebook
-              </Link>
-              <Link target="_blank" href={"https://www.twitter.com/"}>
-                ITwitter
-              </Link>
-              <Link target="_blank" href={"https://www.reddit.com/"}>
-                IReddit
-              </Link>
-              <Link target="_blank" href={"https://www.github.com/"}>
-                IGitHub
-              </Link>
+              {socials.map((social) => (
+                <Link key={social.id} target="_blank" href={social.link}>
+                  <Image
+                    src={social.icon}
+                    alt={social.alt}
+                    width={social.width}
+                    height={social.height}
+                    priority
+                    className="bg-transparent transition duration-300 ease-in-out hover:opacity-80"
+                  />
+                  <span className="sr-only">{social.sr}</span>
+                </Link>
+              ))}
             </div>
           </div>
           <div>
