@@ -10,8 +10,6 @@ const socials = [
     link: "https://www.facebook.com/",
     icon: "/social/facebook-icon.png",
     alt: "Facebook Icon",
-    width: 28,
-    height: 28,
     sr: "Facebook",
   },
   {
@@ -19,8 +17,6 @@ const socials = [
     link: "https://www.twitter.com/",
     icon: "/social/twitter-icon.png",
     alt: "Twitter Icon",
-    width: 24,
-    height: 24,
     sr: "Twitter",
   },
   {
@@ -28,8 +24,6 @@ const socials = [
     link: "https://www.reddit.com/",
     icon: "/social/reddit-icon.svg",
     alt: "Reddit Icon",
-    width: 28,
-    height: 28,
     sr: "Reddit",
   },
   {
@@ -37,8 +31,6 @@ const socials = [
     link: "https://www.github.com/",
     icon: "/social/github-mark-white.svg",
     alt: "Github Icon",
-    width: 28,
-    height: 28,
     sr: "Github",
   },
 ];
@@ -56,10 +48,11 @@ export default function Footer() {
                   <Image
                     src={social.icon}
                     alt={social.alt}
-                    width={social.width}
-                    height={social.height}
+                    width={28}
+                    height={28}
                     priority
                     className="bg-transparent transition duration-300 ease-in-out hover:opacity-80"
+                    style={{ width: 28, height: 28 }}
                   />
                   <span className="sr-only">{social.sr}</span>
                 </Link>

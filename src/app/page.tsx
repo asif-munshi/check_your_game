@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Game } from "@/types/game";
 import { getAllGames } from "@/lib/game";
+import BounceLoading from "@/components/Loading/BounceLoading";
 
 export default function Home() {
   const { data, isLoading } = useQuery<Game[]>({
@@ -10,11 +11,10 @@ export default function Home() {
     queryFn: getAllGames,
   });
 
-  if (isLoading || !data) return <main>Loading...</main>;
+  if (isLoading || !data) return <BounceLoading />;
 
   return (
-    <main className="flex h-screen flex-col items-center gap-4 p-24">
-      <h2 className="text-xl font-bold">Hello World!</h2>
+    <main className="flex h-screen flex-col items-center gap-4 p-24 text-white">
       {data.map((todo) => {
         const createDate = new Date(todo.createdAt);
         const updateDate = new Date(todo.updatedAt);
