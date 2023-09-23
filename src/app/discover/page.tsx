@@ -1,4 +1,4 @@
-import Game from "@/components/Game/Game";
+import GameComp from "@/components/Game/GameComp";
 import { getAllGames } from "@/lib/game";
 
 export default async function Discover() {
@@ -7,8 +7,7 @@ export default async function Discover() {
   return (
     <div className="flex h-screen w-full justify-center text-white">
       <div className="w-9/12">
-        <div>Discover</div>
-        <Game games={initialData} />
+        <GameComp games={initialData} />
       </div>
     </div>
   );
