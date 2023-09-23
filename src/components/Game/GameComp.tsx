@@ -6,7 +6,7 @@ import { Game } from "@/types/game";
 import { getAllGames } from "@/lib/game";
 import BounceLoading from "@/components/Loading/BounceLoading";
 
-export default function Game(props: any) {
+export default function GameComp(props: any) {
   const { data, isLoading } = useQuery<Game[]>({
     queryKey: ["games"],
     queryFn: getAllGames,
@@ -16,7 +16,7 @@ export default function Game(props: any) {
   if (isLoading || !data) return <BounceLoading />;
 
   return (
-    <main className="flex h-screen flex-col items-center gap-4 p-24 text-white">
+    <main className="flex flex-row items-start justify-start gap-4 p-24 text-white">
       {data.map((game) => {
         const createDate = new Date(game.createdAt);
         const updateDate = new Date(game.updatedAt);
