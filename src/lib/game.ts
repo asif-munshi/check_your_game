@@ -7,3 +7,6 @@ const gameApi = axios.create({
 
 export const getAllGames = (): Promise<Game[]> =>
   gameApi.get("/game").then((res) => res.data);
+
+export const getGameById = (id: string): Promise<Game[]> =>
+  gameApi.get(`/game/${id}`).then((res) => res.data);
